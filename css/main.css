@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    direction: rtl;
+    max-width: 100%;
+}
+.heading{
+    background-color: goldenrod;
+    padding: 10px;
+    color: #000;
+}
+.section-one{
+    min-height: 100vh;
+}
+.section-one .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.carousel-inner {
+    width: 80%;
+    margin: 0 auto;
+}
+.offer {
+    min-height: 50vh;
+    
+}
+.offer .container .row{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.description p{
+    font-size: 20px;
+}
+.row{
+    max-width: 100%;
+}
+#countdown  h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+  }
+  
+#countdown  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    width: 210px;
+    height: 210px;
+    border: 1px solid goldenrod;
+    border-radius: 50%;
+    margin-left: 15px;
+  }
+  
+#countdown  li span {
+    display: block;
+    font-size: 4.5rem;
+
+  }
+  
+#countdown  .emoji {
+    display: none;
+    padding: 1rem;
+  }
+  
+#countdown  .emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+  }
+.section-two{
+    min-height: 50vh;
+}
+.section-two img{
+    max-width: 100%;
+}
+.section-two ul li{
+    list-style: none;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+.form{
+    min-height: 50vh;
+}
+.video{
+    min-height: 50vh;
+}
+.questions{
+    min-height: 50vh;
+}
+.questions .container .row{
+    min-height: 50vh;
+}
+.accordion-button::after {
+    margin: 0;
+    margin-right: auto;
+}
+.form .row .radio{
+    border: 1px solid;
+    padding: 30px 15px;
+}
+.modal-header .btn-close {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+  @media all and (max-width: 768px) {
+#countdown    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+    
+#countdown    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+    
+ #countdown   li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  }

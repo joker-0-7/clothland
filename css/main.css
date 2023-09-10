@@ -8,7 +8,7 @@ body{
     max-width: 100%;
 }
 .heading{
-    background-color: goldenrod;
+    background-color: #BEAB6B;
     padding: 10px;
     color: #000;
 }
@@ -57,7 +57,7 @@ body{
     text-transform: uppercase;
     width: 210px;
     height: 210px;
-    border: 1px solid goldenrod;
+    border: 1px solid #BEAB6B;
     border-radius: 50%;
     margin-left: 15px;
   }
@@ -84,9 +84,25 @@ body{
     max-width: 100%;
 }
 .section-two ul li{
-    list-style: none;
+    /* list-style: none; */
     font-size: 21px;
     margin-bottom: 5px;
+}
+.section-two .img img{
+    max-height: 450px;
+}
+.section-two .img{
+    position: relative;
+}
+.section-two .img::after{
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: #BEAB6B;
+    top: 75px;
+    left: -40px;
+    z-index: -1;
 }
 .form{
     min-height: 50vh;
@@ -111,6 +127,14 @@ body{
 .modal-header .btn-close {
     margin-left: 0;
     margin-right: auto;
+}
+.logo {
+    max-height: 200px;
+    /* background-color: aquamarine; */
+    text-align: center;
+}
+.logo img{
+    max-width: 180px;
 }
 
   @media all and (max-width: 768px) {

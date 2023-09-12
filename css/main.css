@@ -13,10 +13,10 @@ body{
     color: #000;
 }
 .section-one{
-    min-height: 100vh;
+    min-height: auto;
 }
 .section-one .container{
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,11 +27,11 @@ body{
     margin: 0 auto;
 }
 .offer {
-    min-height: 50vh;
+    min-height: auto;
     
 }
 .offer .container .row{
-    min-height: 50vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -78,7 +78,7 @@ body{
     padding: 0 .5rem;
   }
 .section-two{
-    min-height: 50vh;
+    min-height: auto;
 }
 .section-two img{
     max-width: 100%;
@@ -104,16 +104,16 @@ body{
     z-index: -1;
 }
 .form{
-    min-height: 50vh;
+    min-height: auto;
 }
 .video{
-    min-height: 50vh;
+    min-height: auto;
 }
 .questions{
-    min-height: 50vh;
+    min-height: auto;
 }
 .questions .container .row{
-    min-height: 50vh;
+    min-height: auto;
 }
 .accordion-button::after {
     margin: 0;

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body class="bg-dark text-light">
+<body class="">
   <div class="section-one">
     <div class="logo">
       <img src="./img/logo.png" alt="logo" class="w-25">
@@ -93,7 +93,7 @@
           </div>
 
         </div>
-        <div class="col-12 mt-3">
+        <div class="col-12">
           <a href="#form" class="btn btn-success ps-5 pe-5 mb-5">أضغط للحصول علي العرض الأن</a>
         </div>
       </div>
@@ -102,7 +102,7 @@
 
   <div class="section-two" dir="ltr">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 col-sm-12">
           <div class="img">
             <img
@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-12" dir="rtl">
-          <ul>
+          <ul class="">
             <li> <img src="./img/checked_190411.png" alt="correct"> خامة مستوردة بنجالين ليكرا</li>
             <li> <img src="./img/checked_190411.png" alt="correct"> ليكرا عالية جدا</li>
             <li> <img src="./img/checked_190411.png" alt="correct"> معالج ضد الوبر</li>
@@ -151,10 +151,10 @@
       </div>
     </div>
   </div>
-  <div class="questions">
+  <div class="questions pt-3 pb-3">
     <div class="container">
       <div class="row align-items-center flex-row-reverse">
-        <div class="col-md-8 col-sm-12">
+        <div class="col-lg-8 col-sm-12">
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
@@ -209,10 +209,17 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe> -->
   </div>
-  <div class="form bg-light text-dark pb-3" id="form">
+  <div class="form bg-light text-dark" id="form" >
     <div class="container p-3">
-      <form>
+      <form name="form_name">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
+          <div class="col-12">
+            <select class="form-control" id="offer" name="offer" onchange="changOffer(value)" >
+              <option selected="selected" disabled>أختيار عرض</option>
+              <option>عرض ال 3 قطع</option>
+              <option>عرض ال 4 قطع</option>
+            </select>
+          </div>
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
@@ -288,6 +295,32 @@
             <input type="text" class="form-control" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
               required>
           </div>
+          <div class="check col-12 p-4">
+            <div class="form-check">
+              <label class="form-check-label" for="black">
+              <input class="form-check-input" type="checkbox" value="" id="black" name="check[]" disabled>
+                اسود
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkTwo">
+              <input class="form-check-input" type="checkbox" value="" id="checkTwo" name="check[]" disabled>
+                زيتي
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkTree">
+              <input class="form-check-input" type="checkbox" value="" id="checkTree" name="check[]" disabled>
+                بييج
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkFour">
+              <input class="form-check-input" type="checkbox" value="" id="checkFour" name="check[]" disabled>
+                فضي
+              </label>
+            </div>
+          </div>
           <div class="content col-12">
             <div class="head">
               <h2>محتوي الطلب</h2>
@@ -322,9 +355,38 @@
       </form>
     </div>
   </div>
+<script>
+  let inputs =  document.querySelectorAll('.check .form-check input');
+  var checkBoxGroup = document.forms['form_name']['check[]'];			
+  var limit = 3;
+  function changOffer(e) {
+    console.log(e)
+    if (e === 'عرض ال 4 قطع') {
+      inputs.forEach((input)=>{
+        input.setAttribute('checked', '')
+        input.setAttribute('disabled', '')
+      })
+    }else{
+      inputs.forEach((input)=>{
+        input.removeAttribute('checked', '')
+        input.removeAttribute('disabled', '')
+    })
+    for (var i = 0; i < checkBoxGroup.length; i++) {
+		checkBoxGroup[i].onclick = function() {
+			var checkedcount = 0;
+			for (var i = 0; i < checkBoxGroup.length; i++) {
+				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+			}
+			if (checkedcount > limit) {
+				alert("يجب عليك اختيار " + limit + "الوان فقط ");				
+				this.checked = false;
+			}
+		}
+	}
+    }
+  }
 
+</script>
   <script src="./js/countdown.js"></script>
-  <script src="./js/main.js"></script>
   <script src="./js/bootstrap.min.js"></script>
-
 </html>

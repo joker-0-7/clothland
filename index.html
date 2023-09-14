@@ -78,8 +78,8 @@
       <div class="row align-items-center text-center">
         <div class="col-12">
           <h2 class="mb-3">عرض خاص لفترة محدودة</h2>
-          <h3>    3 طقم بسعر  450 جنيه فقط بدلا من<span> <img src="./img/cros.gif" alt="cros"> 900</span> جنيه</h3>
-          <h3>    4 طقم بسعر  550 جنيه فقط بدلا من<span> <img src="./img/cros.gif" alt="cros"> 900</span> جنيه</h3>
+          <h3>    3 قطع بسعر  450 جنيه فقط بدلا من<span> <img src="./img/cros.gif" alt="cros"> 900</span> جنيه</h3>
+          <h3>    4 قطع بسعر  550 جنيه فقط بدلا من<span> <img src="./img/cros.gif" alt="cros"> 1100</span> جنيه</h3>
           
         </div>
         <div class="col-12">
@@ -214,18 +214,45 @@
       <form name="form_name">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
           <div class="col-12">
-            <select class="form-control" id="offer" name="offer" onchange="changOffer(value)" >
+            <select class="form-control" id="offer" name="offer" onchange="changOffer(value)" required >
               <option selected="selected" disabled>أختيار عرض</option>
               <option>عرض ال 3 قطع</option>
               <option>عرض ال 4 قطع</option>
             </select>
+          </div>
+          <span class="chosse alert alert-danger" hidden></span>
+          <div class="check col-12 p-4">
+            <div class="form-check">
+              <label class="form-check-label" for="black">
+              <input class="form-check-input" type="checkbox" value="" id="black" name="check[]" disabled>
+                اسود
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkTwo">
+              <input class="form-check-input" type="checkbox" value="" id="checkTwo" name="check[]" disabled>
+                زيتي
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkTree">
+              <input class="form-check-input" type="checkbox" value="" id="checkTree" name="check[]" disabled>
+                بييج
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="checkFour">
+              <input class="form-check-input" type="checkbox" value="" id="checkFour" name="check[]" disabled>
+                فضي
+              </label>
+            </div>
           </div>
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
               <label class="form-check-label" for="flexRadioDefault1">
                 <span class="d-block">مقاس L من 60لـ 70 كيلو</span>
-                <span>450,00 EGP</span>
+                <span class="price">450,00 EGP</span>
               </label>
             </div>
           </div>
@@ -234,7 +261,7 @@
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
               <label class="form-check-label" for="flexRadioDefault2">
                 <span class="d-block">مقاس XL من 70 لـ 80 كيلو</span>
-                <span>450,00 EGP</span>
+                <span class="price">450,00 EGP</span>
               </label>
             </div>
           </div>
@@ -243,7 +270,7 @@
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
               <label class="form-check-label" for="flexRadioDefault3">
                 <span class="d-block">مقاس 2XL من 80 لـ 95 كيلو</span>
-                <span>450,00 EGP</span>
+                <span class="price">450,00 EGP</span>
               </label>
             </div>
           </div>
@@ -252,7 +279,7 @@
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
               <label class="form-check-label" for="flexRadioDefault4">
                 <span class="d-block">مقاس 3XL من 95 لـ 110 كيلو</span>
-                <span>450,00 EGP</span>
+                <span class="price">450,00 EGP</span>
               </label>
             </div>
           </div>
@@ -260,11 +287,12 @@
             <input type="text" class="form-control" placeholder="الأسم بالكامل" required>
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="text" class="form-control" placeholder="رقم الهاتف" required>
+            <input type="tel" class="form-control" placeholder="رقم الهاتف" required>
           </div>
           <div class="col-md-6 col-sm12">
-            <select class="form-control" id="exampleSelectVendor" name="city">
-              <option selected="selected">الغربية</option>
+            <select class="form-control" id="exampleSelectVendor" name="city" required>
+              <option selected="selected" disabled>اختار المحافظة</option>
+              <option>الغربية</option>
               <option>الإسكندرية</option>
               <option>الإسماعيلية</option>
               <option>كفر الشيخ</option>
@@ -295,32 +323,7 @@
             <input type="text" class="form-control" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
               required>
           </div>
-          <div class="check col-12 p-4">
-            <div class="form-check">
-              <label class="form-check-label" for="black">
-              <input class="form-check-input" type="checkbox" value="" id="black" name="check[]" disabled>
-                اسود
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label" for="checkTwo">
-              <input class="form-check-input" type="checkbox" value="" id="checkTwo" name="check[]" disabled>
-                زيتي
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label" for="checkTree">
-              <input class="form-check-input" type="checkbox" value="" id="checkTree" name="check[]" disabled>
-                بييج
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label" for="checkFour">
-              <input class="form-check-input" type="checkbox" value="" id="checkFour" name="check[]" disabled>
-                فضي
-              </label>
-            </div>
-          </div>
+
           <div class="content col-12">
             <div class="head">
               <h2>محتوي الطلب</h2>
@@ -334,16 +337,20 @@
               </thead>
               <tbody class="table-group-divider">
                 <tr class="table-active">
-                  <th scope="row"><span><img src="./img/WhatsApp Image 2023-09-10 at 6.35.32 PM.jpeg" alt="content"></span><span>عرض 3 سويتشيرت فرو ( اسود - رمادى فاتح - ازرق )</span></th>
-                  <td>450 EGP</td>
+                  <th scope="row"><span><img src="./img/WhatsApp Image 2023-09-10 at 6.35.32 PM.jpeg" alt="content"></span><span class="content">عرض 3 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )</span></th>
+                  <td class="price">450 EGP</td>
                 </tr>
                 <tr>
                   <th scope="row">المجموع</th>
-                  <td>450 EGP</td>
+                  <td class="price">450 EGP</td>
                 </tr>
                 <tr class="table-active">
+                  <th scope="row">الشحن</th>
+                  <td>30 EGP</td>
+                </tr>
+                <tr>
                   <th scope="row">الإجمالي</th>
-                  <td>450 EGP</td>
+                  <td class="total">480 EGP</td>
                 </tr>
               </tbody>
             </table>
@@ -357,7 +364,12 @@
   </div>
 <script>
   let inputs =  document.querySelectorAll('.check .form-check input');
-  var checkBoxGroup = document.forms['form_name']['check[]'];			
+  var checkBoxGroup = document.forms['form_name']['check[]'];
+  let prices = document.querySelectorAll('.price');
+  let chosse = document.querySelector('.chosse');
+  let content = document.querySelector('span.content');
+  let total = document.querySelector('.total');
+  console.log(prices)
   var limit = 3;
   function changOffer(e) {
     console.log(e)
@@ -366,11 +378,24 @@
         input.setAttribute('checked', '')
         input.setAttribute('disabled', '')
       })
+      prices.forEach((price)=>{
+        price.textContent = '550,00 EGP'
+      })
+      chosse.setAttribute('hidden', '')
+      content.textContent = 'عرض 4 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
+      total.textContent = '580,00 EGP'
     }else{
       inputs.forEach((input)=>{
         input.removeAttribute('checked', '')
         input.removeAttribute('disabled', '')
-    })
+      })
+      prices.forEach((price)=>{
+        price.textContent = '450,00 EGP'
+      })
+      chosse.removeAttribute('hidden')
+      chosse.textContent = 'إختار 3 الوان'
+      content.textContent = 'عرض 3 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
+      total.textContent = '480,00 EGP'
     for (var i = 0; i < checkBoxGroup.length; i++) {
 		checkBoxGroup[i].onclick = function() {
 			var checkedcount = 0;

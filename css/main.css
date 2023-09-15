@@ -171,6 +171,39 @@ body{
     width: 20px;
     margin-left: 10px;
 }
+.check{
+    display: flex;
+    justify-content: space-around;
+}
+.check .form-check label{
+    border: 1px solid;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*Countdown style*/
+#the-24h-countdown {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  margin:15px auto 150px;
+  width:350px;
+}
+#the-24h-countdown span {background:#222;color:#f4f4f4; width:80px;display:inline-block;height:80px;float:left;line-height:80px;margin-left:30px;border-radius:10px;}
+
+#the-24h-countdown .min:before, #the-24h-countdown .seg:before {
+  content:':';
+  color:#222;
+  margin-left:-33px;
+  margin-right:26px;
+}
+.tempo {width:350px;padding:0;}
+.tempo li {text-align:left ;display:inline-block;font-size:24px;width:31%;margin-top:-50px;margin-left:-1px;}
 @media (max-width: 1024px) {
     #countdown h1 {
           font-size: 2rem;
@@ -242,6 +275,11 @@ body{
     }
     .section-two .img img{
         max-height: 350px;
+    }
+    .section-two ul {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .section-two .img{
         position: relative;

@@ -83,18 +83,13 @@
           
         </div>
         <div class="col-12">
-          <div id="countdown" dir="ltr" class="text-center">
-            <ul>
-              <li><span id="days"></span>days</li>
-              <li><span id="hours"></span>Hours</li>
-              <li><span id="minutes"></span>Minutes</li>
-              <li><span id="seconds"></span>Seconds</li>
-            </ul>
+          <div id="the-24h-countdown">
+            <p></p>
           </div>
 
         </div>
         <div class="col-12">
-          <a href="#form" class="btn btn-success ps-5 pe-5 mb-5">أضغط للحصول علي العرض الأن</a>
+          <a href="#form" class="btn btn-success ps-5 pe-5 mb-5">أضغط للحصول علي خصم 50% </a>
         </div>
       </div>
     </div>
@@ -142,10 +137,10 @@
             <li> <img class="img" src="./img/checked_190411.png" alt="check"> يتم معاينة المنتج قبل الاستلام لو مختلف عن العرض تقدر ترفضه</li>
             <li> <img class="img" src="./img/checked_190411.png" alt="check"> مهتمين بتنزيل العروض ديما وهذا ليس اول عرض ولا هيكون اخر عرض دايما مستمرين</li>
             <li> <img class="img" src="./img/checked_190411.png" alt="check"> متواجدين دائما للرد علي الأسئلة المطروحة في رسائل السوشيال ميديا</li>
-            <li> <img class="img" src="./img/checked_190411.png" alt="check"> ويمكنك متابعتنا علي وسائل التواصل الإجتماعي من هنا <a href="#"><img src="./img/facebook_733547.png" alt=""></a> <a href="#"><img src="./img/instagram_2111463.png" alt=""></a> </li>
+            <li> <img class="img" src="./img/checked_190411.png" alt="check"> ويمكنك متابعتنا علي وسائل التواصل الإجتماعي من هنا <a href="https://www.facebook.com/M.F.Clothing.Company?mibextid=ZbWKwL"><img src="./img/facebook_733547.png" alt=""></a> <a href="https://instagram.com/modern_fashion_clothing.comp?igshid=OGQ5ZDc2ODk2ZA=="><img src="./img/instagram_2111463.png" alt=""></a> </li>
           </ul>
           <div class="col-12 text-center">
-            <a href="#form" class="btn btn-success ps-5 pe-5 mb-5">أضغط للحصول علي العرض الأن</a>
+            <a href="#form" class="btn btn-success ps-5 pe-5 mb-5">أضغط للحصول علي خصم 50%</a>
           </div>
         </div>
       </div>
@@ -209,10 +204,11 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe> -->
   </div>
-  <div class="form bg-light text-dark" id="form" >
+  <div class="form bg-dark text-light" >
     <div class="container p-3">
-      <form name="form_name">
+      <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbx3K6eFz2C8mz2skuIboQm04CfRbPivUPwtdf3MEPFFiX6wT7oC-hgi4Pc94SStSWQa/exec" method="post">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
+        
           <div class="col-12">
             <select class="form-control" id="offer" name="offer" onchange="changOffer(value)" required >
               <option selected="selected" disabled>أختيار عرض</option>
@@ -224,32 +220,33 @@
           <div class="check col-12 p-4">
             <div class="form-check">
               <label class="form-check-label" for="black">
-              <input class="form-check-input" type="checkbox" value="" id="black" name="check[]" disabled>
+              <input class="form-check-input" type="checkbox" value="black" id="black" onchange="color(value)" name="check" disabled>
                 اسود
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label" for="checkTwo">
-              <input class="form-check-input" type="checkbox" value="" id="checkTwo" name="check[]" disabled>
+              <input class="form-check-input" type="checkbox" value="z" id="checkTwo" onchange="color(value)" name="check" disabled>
                 زيتي
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label" for="checkTree">
-              <input class="form-check-input" type="checkbox" value="" id="checkTree" name="check[]" disabled>
+              <input class="form-check-input" type="checkbox" value="b" id="checkTree" onchange="color(value)" name="check" disabled>
                 بييج
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label" for="checkFour">
-              <input class="form-check-input" type="checkbox" value="" id="checkFour" name="check[]" disabled>
+              <input class="form-check-input" type="checkbox" value="f" id="checkFour" onchange="color(value)" name="check" disabled>
                 فضي
               </label>
             </div>
           </div>
+          <span class="colors"></span>
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" value="one" id="flexRadioDefault1" checked>
               <label class="form-check-label" for="flexRadioDefault1">
                 <span class="d-block">مقاس L من 60لـ 70 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -258,7 +255,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <input class="form-check-input" value="two" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
               <label class="form-check-label" for="flexRadioDefault2">
                 <span class="d-block">مقاس XL من 70 لـ 80 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -267,7 +264,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+              <input class="form-check-input" type="radio" value="three" name="flexRadioDefault" id="flexRadioDefault3" checked>
               <label class="form-check-label" for="flexRadioDefault3">
                 <span class="d-block">مقاس 2XL من 80 لـ 95 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -276,7 +273,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+              <input class="form-check-input" value="four" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
               <label class="form-check-label" for="flexRadioDefault4">
                 <span class="d-block">مقاس 3XL من 95 لـ 110 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -284,10 +281,10 @@
             </div>
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="text" class="form-control" placeholder="الأسم بالكامل" required>
+            <input type="text" class="form-control" placeholder="الأسم بالكامل" required name="name">
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="tel" class="form-control" placeholder="رقم الهاتف" required>
+            <input type="tel" class="form-control" placeholder="رقم الهاتف" required name="phone">
           </div>
           <div class="col-md-6 col-sm12">
             <select class="form-control" id="exampleSelectVendor" name="city" required>
@@ -320,10 +317,9 @@
             </select>
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="text" class="form-control" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
+            <input type="text" class="form-control" name="address" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
               required>
           </div>
-
           <div class="content col-12">
             <div class="head">
               <h2>محتوي الطلب</h2>
@@ -356,7 +352,7 @@
             </table>
           </div>
           <div class="col-12 text-center">
-            <button class="btn btn-success w-50"> تأكيد الطلب </button>
+            <input type="submit" class="btn btn-success w-50" value="تأكيد الطلب"/>
           </div>
         </div>
       </form>
@@ -364,11 +360,12 @@
   </div>
 <script>
   let inputs =  document.querySelectorAll('.check .form-check input');
-  var checkBoxGroup = document.forms['form_name']['check[]'];
+  var checkBoxGroup = document.forms['form_name']['check'];
   let prices = document.querySelectorAll('.price');
   let chosse = document.querySelector('.chosse');
   let content = document.querySelector('span.content');
   let total = document.querySelector('.total');
+  
   console.log(prices)
   var limit = 3;
   function changOffer(e) {
@@ -410,8 +407,35 @@
 	}
     }
   }
-
 </script>
+<!-- <script>
+  let colors = []
+  let colorsInp = document.querySelector('.colors')
+  function color(e) {
+      const index = colors.indexOf(e);
+    if (index > -1) {
+      colors.splice(index, 1);
+}else{
+  colors.push(e)
+}
+    console.log(colors)
+  }
+  let form = document.querySelector('#form');
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    let data = new FormData(form);
+    fetch('https://script.google.com/macros/s/AKfycbxTNBhInkRpTT3FpOH0gSy2HZe8GEcqYpBL0tKxy-DxZmgsdclGUNCzY0B3r20HqWYR/exec', {
+      method: 'POST',
+      body: data,
+      
+    })
+    .then(res => res.text())
+    .then(data => console.log(JSON.stringify(data)))
+  })
+</script> -->
   <script src="./js/countdown.js"></script>
+  <!-- <script src="./js/main.js"></script> -->
   <script src="./js/bootstrap.min.js"></script>
 </html>
+
+

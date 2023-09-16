@@ -9,5 +9,5 @@ setInterval(function time(){
 	if((sec + '').length == 1){
 		  sec = '0' + sec;
 	}
-	document.querySelector('#the-24h-countdown p').innerHTML = '<span>'+hours+'</span><span class="min">'+min+'<br></span><span class="seg">'+sec+'</span>'
+	document.querySelector('#the-24h-countdown p').innerHTML = '<span class="hours">'+hours+'</span><span class="min">'+min+'<br></span><span class="seg">'+sec+'</span>'
   }, 1000);

@@ -216,17 +216,36 @@
               <option>عرض ال 4 قطع</option>
             </select>
           </div>
-          <div class="colors" hidden>
-            <span class="alert alert-danger d-block">إختار 3 الوان</span>
-            <select class="form-control" id="color" name="color" required >
-              <option selected="selected" disabled>أختار الألوان</option>
-              <option>(أسود - زيتي - بيج)</option>
-              <option>(أسود - زيتي - فضي)</option>
-              <option>(أسود - بيج - فضي)</option>
-              <option>(زيتي - بيج - فضي)</option>
-            </select>
+          <span class="chosse alert alert-danger" hidden></span>
+          <div class="check p-4">
+
+              <div class="form-check col-lg-3 col-sm-6">
+                <label class="form-check-label" for="black">
+                <input class="form-check-input" type="checkbox" value="black" onchange="changColor(value)" id="black" name="check" disabled>
+                  اسود
+                </label>
+              </div>
+              <div class="form-check col-lg-3 col-sm-6">
+                <label class="form-check-label" for="checkTwo">
+                <input class="form-check-input" type="checkbox" value="zate" onchange="changColor(value)" id="checkTwo" name="check" disabled>
+                  زيتي
+                </label>
+              </div>
+              <div class="form-check col-lg-3 col-sm-6">
+                <label class="form-check-label" for="checkTree">
+                <input class="form-check-input" type="checkbox" value="bage" onchange="changColor(value)" id="checkTree" name="check" disabled>
+                  بييج
+                </label>
+              </div>
+              <div class="form-check col-lg-3 col-sm-6">
+                <label class="form-check-label" for="checkFour">
+                <input class="form-check-input" type="checkbox" value="fidy" onchange="changColor(value)" id="checkFour" name="check" disabled>
+                  فضي
+                </label>
+              </div>
+
           </div>
-          
+          <input class="colors" name="color" value="" hidden/>
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" value="one" id="flexRadioDefault1" checked>
@@ -342,40 +361,67 @@
     </div>
   </div>
 <script>
-  let inputs =  document.querySelectorAll('#color');
+  let inputs =  document.querySelectorAll('.check .form-check input');
   var checkBoxGroup = document.forms['form_name']['check'];
   let prices = document.querySelectorAll('.price');
   let chosse = document.querySelector('.chosse');
+  let colors = document.querySelectorAll('.check .form-check-input');
   let content = document.querySelector('span.content');
   let total = document.querySelector('.total');
-  let colors = document.querySelector('.colors')
-
-  console.log(prices)
+  colorVal = document.querySelector('input.colors')
+  
+  // console.log(prices)
   var limit = 3;
   function changOffer(e) {
-    console.log(e)
+    // console.log(e)
     if (e === 'عرض ال 4 قطع') {
       inputs.forEach((input)=>{
+        input.setAttribute('checked', '')
         input.setAttribute('disabled', '')
       })
       prices.forEach((price)=>{
         price.textContent = '550,00 EGP'
       })
-      colors.setAttribute('hidden', '')
+      chosse.setAttribute('hidden', '')
       content.textContent = 'عرض 4 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
       total.textContent = '580,00 EGP'
     }else{
       inputs.forEach((input)=>{
+        input.removeAttribute('checked', '')
         input.removeAttribute('disabled', '')
       })
       prices.forEach((price)=>{
         price.textContent = '450,00 EGP'
       })
-      colors.removeAttribute('hidden')
+      chosse.removeAttribute('hidden')
+      chosse.textContent = 'إختار 3 الوان'
       content.textContent = 'عرض 3 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
       total.textContent = '480,00 EGP'
+    for (var i = 0; i < checkBoxGroup.length; i++) {
+		checkBoxGroup[i].onclick = function() {
+			var checkedcount = 0;
+			for (var i = 0; i < checkBoxGroup.length; i++) {
+				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+			}
+			if (checkedcount > limit) {
+				alert("يجب عليك اختيار " + limit + "الوان فقط ");				
+				this.checked = false;
+			}
+		}
+	}
     }
   }
+  function changColor(e) {
+    col = []
+    for (let i = 0; i < colors.length; i++) {
+      if (colors[i].checked) {
+        col += colors[i].value + ' - '
+      }
+    }
+    colorVal.value = col
+    // console.log(col)
+  }
+  
 </script>
 <!-- <script>
   let colors = []

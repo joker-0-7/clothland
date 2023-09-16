@@ -206,7 +206,7 @@
   </div>
   <div class="form bg-dark text-light" >
     <div class="container p-3">
-      <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbx3K6eFz2C8mz2skuIboQm04CfRbPivUPwtdf3MEPFFiX6wT7oC-hgi4Pc94SStSWQa/exec" method="post">
+      <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbx_iH0d_tna-OiTxCGlcTg61QYJ3LRdwIZ7EdPchE203J2QoBTT0zErmZZEPtOGmmPR/exec" method="post">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
         
           <div class="col-12">
@@ -216,9 +216,8 @@
               <option>عرض ال 4 قطع</option>
             </select>
           </div>
-          <span class="chosse alert alert-danger" hidden></span>
-          <div class="check p-4">
-
+          <div class="colors" hidden>
+            <span class="alert alert-danger d-block">إختار 3 الوان</span>
             <select class="form-control" id="color" name="color" required >
               <option selected="selected" disabled>أختار الألوان</option>
               <option>(أسود - زيتي - بيج)</option>
@@ -227,7 +226,7 @@
               <option>(زيتي - بيج - فضي)</option>
             </select>
           </div>
-          <span class="colors"></span>
+          
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" value="one" id="flexRadioDefault1" checked>
@@ -349,7 +348,8 @@
   let chosse = document.querySelector('.chosse');
   let content = document.querySelector('span.content');
   let total = document.querySelector('.total');
-  
+  let colors = document.querySelector('.colors')
+
   console.log(prices)
   var limit = 3;
   function changOffer(e) {
@@ -361,7 +361,7 @@
       prices.forEach((price)=>{
         price.textContent = '550,00 EGP'
       })
-      chosse.setAttribute('hidden', '')
+      colors.setAttribute('hidden', '')
       content.textContent = 'عرض 4 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
       total.textContent = '580,00 EGP'
     }else{
@@ -371,8 +371,7 @@
       prices.forEach((price)=>{
         price.textContent = '450,00 EGP'
       })
-      chosse.removeAttribute('hidden')
-      chosse.textContent = 'إختار 3 الوان'
+      colors.removeAttribute('hidden')
       content.textContent = 'عرض 3 سويتشيرت فرو ( اسود - بيج - زيتي - فضي )'
       total.textContent = '480,00 EGP'
     }

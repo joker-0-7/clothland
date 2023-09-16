@@ -188,22 +188,52 @@ body{
 
 /*Countdown style*/
 #the-24h-countdown {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-  font-size: 3rem;
-  margin:15px auto 150px;
-  width:350px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    
+    font-size: 3rem;
+    margin:15px auto 150px;
+    /* min-width:350px; */
 }
-#the-24h-countdown span {background:#222;color:#f4f4f4; width:80px;display:inline-block;height:80px;float:left;line-height:80px;margin-left:30px;border-radius:10px;}
+#the-24h-countdown p{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+#the-24h-countdown span {
+    position: relative;
+    background:#222;
+    color:#f4f4f4;
+    width:220px;
+    display:inline-block;
+    height:220px;
+    line-height:80px;
+    margin-left:30px;
+    border-radius:50%;
+}
 
-#the-24h-countdown .min:before, #the-24h-countdown .seg:before {
-  content:':';
-  color:#222;
-  margin-left:-33px;
-  margin-right:26px;
+#the-24h-countdown span::before{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%) ;
+    bottom: 0;
 }
-.tempo {width:350px;padding:0;}
-.tempo li {text-align:left ;display:inline-block;font-size:24px;width:31%;margin-top:-50px;margin-left:-1px;}
+#the-24h-countdown .hours:before
+{
+    content:'ساعة';
+
+}
+#the-24h-countdown .min:before{
+    content:'دقيقة';
+    
+}
+#the-24h-countdown .seg:before{
+    content:'ثانية';
+    
+}
+
 @media (max-width: 1024px) {
     #countdown h1 {
           font-size: 2rem;
@@ -220,6 +250,7 @@ body{
      #countdown li span {
           font-size: 16px;
         }
+        
         .section-two .img img{
             max-height: 350px;
         }
@@ -272,6 +303,29 @@ body{
     
  #countdown li span {
       font-size: 16px;
+    }
+    #the-24h-countdown {
+        font-size: 1rem;
+        /* margin:15px auto 150px; */
+        /* min-width:350px; */
+    }
+    #the-24h-countdown p{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+    #the-24h-countdown span {
+        position: relative;
+        background:#222;
+        color:#f4f4f4;
+        width:90px;
+        display:inline-block;
+        height:90px;
+        line-height:50px;
+        margin-left:5px;
+        border-radius:50%;
     }
     .section-two .img img{
         max-height: 350px;

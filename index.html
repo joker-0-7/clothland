@@ -206,7 +206,7 @@
   </div>
   <div class="form bg-dark text-light" >
     <div class="container p-3">
-      <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbx_iH0d_tna-OiTxCGlcTg61QYJ3LRdwIZ7EdPchE203J2QoBTT0zErmZZEPtOGmmPR/exec" method="post">
+      <form name="form_name" id="form">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
         
           <div class="col-12">
@@ -248,7 +248,7 @@
           <input class="colors" name="color" value="" hidden/>
           <div class="col-md-5 col-sm-12 radio ">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" value="one" id="flexRadioDefault1" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" value="Larg" id="flexRadioDefault1" checked>
               <label class="form-check-label" for="flexRadioDefault1">
                 <span class="d-block">مقاس L من 60لـ 70 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -257,7 +257,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" value="two" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <input class="form-check-input" value="XL" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
               <label class="form-check-label" for="flexRadioDefault2">
                 <span class="d-block">مقاس XL من 70 لـ 80 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -266,7 +266,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" type="radio" value="three" name="flexRadioDefault" id="flexRadioDefault3" checked>
+              <input class="form-check-input" type="radio" value="2XL" name="flexRadioDefault" id="flexRadioDefault3" checked>
               <label class="form-check-label" for="flexRadioDefault3">
                 <span class="d-block">مقاس 2XL من 80 لـ 95 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -275,7 +275,7 @@
           </div>
           <div class="col-md-5 col-sm-12 radio">
             <div class="form-check">
-              <input class="form-check-input" value="four" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+              <input class="form-check-input" value="3XL" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
               <label class="form-check-label" for="flexRadioDefault4">
                 <span class="d-block">مقاس 3XL من 95 لـ 110 كيلو</span>
                 <span class="price">450,00 EGP</span>
@@ -319,11 +319,11 @@
             </select>
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="text" class="form-control" name="address" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
+            <input type="text" class="form-control" name="madina" placeholder="المدينة"
               required>
           </div>
           <div class="col-md-6 col-sm12">
-            <input type="text" class="form-control" name="madina" placeholder="المدينة"
+            <input type="text" class="form-control" name="address" placeholder="العنوان بالتفصيل (مثال : الحي - الشارع - رقم المنزل)"
               required>
           </div>
           <div class="content col-12">
@@ -427,31 +427,21 @@
   }
   
 </script>
-<!-- <script>
-  let colors = []
-  let colorsInp = document.querySelector('.colors')
-  function color(e) {
-      const index = colors.indexOf(e);
-    if (index > -1) {
-      colors.splice(index, 1);
-}else{
-  colors.push(e)
-}
-    console.log(colors)
-  }
+<script>
+ 
   let form = document.querySelector('#form');
   form.addEventListener('submit', (e)=>{
     e.preventDefault()
     let data = new FormData(form);
-    fetch('https://script.google.com/macros/s/AKfycbxTNBhInkRpTT3FpOH0gSy2HZe8GEcqYpBL0tKxy-DxZmgsdclGUNCzY0B3r20HqWYR/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbxzEbK5NWsHXTDfVdUefm9DyQEvQzNFJVVWGavRmIfvNMHq0VOO88HMbgePt-CHHQHb/exec', {
       method: 'POST',
       body: data,
       
     })
     .then(res => res.text())
-    .then(data => console.log(JSON.stringify(data)))
+    .then(window.location.pathname = '/thank.html')
   })
-</script> -->
+</script>
   <script src="./js/countdown.js"></script>
   <!-- <script src="./js/main.js"></script> -->
   <script src="./js/bootstrap.min.js"></script>

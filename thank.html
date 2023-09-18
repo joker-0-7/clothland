@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <style>
+    .logo{
+      width: 650px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .logo{
+      width: 340px;
+    }
+    }
+  </style>
+</head>
+<body dir="rtl" class="text-center">
+  <div class="header bg-success">
+    <div class="logo">
+      <img src="./img/logo.png" alt="logo" class="w-100">
+    </div>
+  </div>
+  <div class="thank bg-success pb-5">
+    <div class="container">
+      <h1>شرف لينا خدمتكم </h1>
+      <p>تم تأكيد الطلب الخاص بحضرتكم وسوف يتم التواصل معكم هاتفيا لمراجهة البيانات وتأكيدها</p>
+      <div class="alert alert-danger"> أجعل الهاتف بمكان به شبكه وحافظ علي بقاء الهاتف قيد التشغيل </div>
+    </div>
+  </div>
+  <div class="comment mt-4">
+    <div class="container">
+      <form id="form">
+        <div class="alert alert-success" hidden> تم ارسال تعليقك بنجاح </div>
+        <textarea  class="form-control" name="comment" id="comment" cols="45" rows="10" placeholder="يسعدنا معرفة رأيك" required class="d-block"></textarea>
+        <input type="submit" class="btn btn-primary d-block mt-3 ms-auto me-auto w-25">
+      </form>
+    </div>
+  </div>
+  <script>
+ 
+    let form = document.querySelector('#form');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault()
+      let data = new FormData(form);
+      fetch('https://script.google.com/macros/s/AKfycbxzEbK5NWsHXTDfVdUefm9DyQEvQzNFJVVWGavRmIfvNMHq0VOO88HMbgePt-CHHQHb/exec', {
+        method: 'POST',
+        body: data,
+        
+      })
+      .then(res => res.text())
+      document.querySelector('#form div.alert').removeAttribute('hidden')
+    })
+  </script>
+</body>
+</html>

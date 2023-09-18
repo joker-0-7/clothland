@@ -206,7 +206,7 @@
   </div>
   <div class="form bg-dark text-light" >
     <div class="container p-3">
-      <form name="form_name" id="form">
+      <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbyiLyyt5gTNNonteCevaOfYQdeFh4N1pevFoQGS0nKg_fwgsY8tH0OI9Ub4zWJSLnNw/exec" method="post">
         <div class="row ms-auto me-auto row-gap-3 justify-content-evenly">
         
           <div class="col-12">
@@ -433,13 +433,13 @@
   form.addEventListener('submit', (e)=>{
     e.preventDefault()
     let data = new FormData(form);
-    fetch('https://script.google.com/macros/s/AKfycbxzEbK5NWsHXTDfVdUefm9DyQEvQzNFJVVWGavRmIfvNMHq0VOO88HMbgePt-CHHQHb/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyiLyyt5gTNNonteCevaOfYQdeFh4N1pevFoQGS0nKg_fwgsY8tH0OI9Ub4zWJSLnNw/exec', {
       method: 'POST',
       body: data,
       
     })
     .then(res => res.text())
-    .then(window.location.pathname = '/thank.html')
+    .then(window.location.href = 'https://joker-0-7.github.io/clothland/thank.html')
   })
 </script>
   <script src="./js/countdown.js"></script>

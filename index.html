@@ -204,6 +204,58 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe> -->
   </div>
+  <div class="sec-three">
+    <div class="container">
+      <h1>أراء العملاء </h1>
+      <div id="carouselExample2" class="carousel slide mb-3">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./img/img-peaple/1.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/2.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/3.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/4.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/5.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/6.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/img-peaple/7.PNG"
+              class="d-block w-50 m-auto" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="form bg-dark text-light" >
     <div class="container p-3">
       <form name="form_name" id="form" action="https://script.google.com/macros/s/AKfycbyiLyyt5gTNNonteCevaOfYQdeFh4N1pevFoQGS0nKg_fwgsY8tH0OI9Ub4zWJSLnNw/exec" method="post">
@@ -372,7 +424,9 @@
   let colors = document.querySelectorAll('.check .form-check-input');
   let content = document.querySelector('span.content');
   let total = document.querySelector('.total');
-  colorVal = document.querySelector('input.colors')
+  let btn = document.querySelector('#carouselExample .carousel-control-next');
+  let btn2 = document.querySelector('#carouselExample2 .carousel-control-next');
+  let colorVal = document.querySelector('input.colors')
   
   // console.log(prices)
   var limit = 3;
@@ -425,7 +479,10 @@
     colorVal.value = col
     // console.log(col)
   }
-  
+  setInterval(() => {
+    btn.click()
+    btn2.click()
+  }, 3000);
 </script>
 <script>
  

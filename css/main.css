@@ -233,7 +233,12 @@ body{
     content:'ثانية';
     
 }
-
+.sec-three{
+    height: 45 vh;
+}
+.sec-three .carousel-inner{
+    width: 50%;
+}
 @media (max-width: 1024px) {
     #countdown h1 {
           font-size: 2rem;

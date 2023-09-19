@@ -234,7 +234,7 @@ body{
     
 }
 .sec-three{
-    height: 45 vh;
+    min-height: 84vh;
 }
 .sec-three .carousel-inner{
     width: 50%;
@@ -311,8 +311,6 @@ body{
     }
     #the-24h-countdown {
         font-size: 1rem;
-        /* margin:15px auto 150px; */
-        /* min-width:350px; */
     }
     #the-24h-countdown p{
         display: flex;
@@ -367,6 +365,9 @@ body{
     }
     .features li{
     margin-right: 15px;
+}
+.sec-three{
+    min-height: 34vh;
 }
 
   }
